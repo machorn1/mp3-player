@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="player-header">
+            <h1>🎵 MP3 Player</h1>
+        </div>
+
+        <!-- Album Art -->
+        <div class="album-art">
+            <img id="albumArt" src="https://via.placeholder.com/300?text=No+Song" alt="Album Art">
+        </div>
+
+        <!-- Song Info -->
+        <div class="song-info">
+            <h2 id="songTitle">Select a song</h2>
+            <p id="songArtist">Unknown Artist</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+            <div class="progress-bar">
+                <input type="range" id="progressSlider" min="0" max="100" value="0">
+                <div class="progress-fill"></div>
+            </div>
+            <span id="duration">0:00</span>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="audioPlayer"></audio>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" title="Previous">
+                <span class="icon">⏮️</span>
+            </button>
+            <button id="playBtn" class="control-btn play-btn" title="Play">
+                <span class="icon">▶️</span>
+            </button>
+            <button id="pauseBtn" class="control-btn pause-btn" title="Pause" style="display: none;">
+                <span class="icon">⏸️</span>
+            </button>
+            <button id="nextBtn" class="control-btn" title="Next">
+                <span class="icon">⏭️</span>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <span class="volume-label">🔊</span>
+            <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+            <span id="volumeValue">70%</span>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-section">
+            <h3>Playlist</h3>
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" multiple accept="audio/mp3,.mp3" style="display: none;">
+                <button id="uploadBtn" class="upload-btn">📁 Upload MP3 Files</button>
+            </div>
+            <ul id="playlist" class="playlist"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
